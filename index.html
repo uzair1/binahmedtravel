@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bin Ahmed Travel & Tour — Hajj & Umrah Packages, Karachi</title>
+<meta name="description" content="Bin Ahmed Travel & Tour — Your Trusted Travel Partner. Hajj & Umrah packages, airline ticketing, visa assistance and worldwide travel from Karachi." />
+<meta name="theme-color" content="#1b2f6e" />
+<link rel="icon" href="icon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script>
+/* Apply saved language before paint to avoid a flash */
+(function(){try{var q=new URLSearchParams(location.search).get('lang');var l=q||localStorage.getItem('ba_lang');if(l==='ur'){document.documentElement.lang='ur';document.documentElement.dir='rtl';}}catch(e){}})();
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'], arabic: ['Amiri', 'serif'] },
+      colors: {
+        navy: { 50:'#eef2fb', 100:'#dbe3f6', 200:'#b5c5ec', 500:'#2f4a9e', 600:'#243c86', 700:'#1b2f6e', 800:'#142456', 900:'#0d1a40' },
+        brand: { 50:'#fdecee', 100:'#fbd5da', 500:'#e02a3f', 600:'#c81f33', 700:'#a8182a' },
+        sand: { 50:'#faf8f4', 100:'#f3efe6' },
+        gold: { 500:'#c9a24a' }
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon-180.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Bin">
+</head>
+<body class="bg-white text-slate-800 font-sans antialiased">
+
+<!-- Top bar -->
+<div class="bg-navy-900 text-navy-100 text-xs">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-9 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-5 overflow-hidden">
+      <span class="hidden sm:flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i><span data-i18n="address">SA 74, Sector 3, North Karachi</span></span>
+      <a href="tel:+923212255342" class="flex items-center gap-1.5 hover:text-white"><i data-lucide="phone" class="w-3.5 h-3.5"></i><span dir="ltr">0321 2255342</span></a>
+      <a href="tel:+923112600696" class="hidden md:flex items-center gap-1.5 hover:text-white"><i data-lucide="phone" class="w-3.5 h-3.5"></i><span dir="ltr">0311 2600696</span></a>
+    </div>
+    <a href="#advisory" class="hidden sm:flex items-center gap-1.5 text-white font-medium whitespace-nowrap">
+      <span class="w-1.5 h-1.5 rounded-full bg-brand-500 pulse-dot"></span><span data-i18n="topbar.alert">Vaccination update for Karachi Umrah passengers</span>
+    </a>
+  </div>
+</div>
+
+<!-- Header -->
+<header id="header" class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-3">
+      <span class="logo-crop w-12 h-12"><img src="assets/BinAhmed.jpeg" alt="Bin Ahmed Travel & Tour logo" /></span>
+      <span class="leading-tight brand-text" dir="ltr">
+        <span class="block font-extrabold text-navy-700 tracking-tight text-[17px]">BIN AHMED</span>
+        <span class="block text-[11px] font-semibold text-brand-600 tracking-[0.18em]">TRAVEL & TOUR</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+      <a href="#packages" class="nav-link" data-i18n="nav.packages">Packages</a>
+      <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
+      <a href="#journey" class="nav-link" data-i18n="nav.journey">How It Works</a>
+      <a href="#advisory" class="nav-link" data-i18n="nav.advisory">Travel Advisory</a>
+      <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a>
+      <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <button class="lang-btn" data-lang-toggle aria-label="Switch language">
+        <i data-lucide="languages" class="w-4 h-4"></i><span data-lang-label>اردو</span>
+      </button>
+      <a href="#contact" class="hidden sm:inline-flex btn-primary"><span data-i18n="cta.quote">Get a Quote</span> <i data-lucide="arrow-right" class="w-4 h-4 flip-rtl"></i></a>
+      <button id="menuBtn" class="lg:hidden w-10 h-10 grid place-items-center rounded-lg border border-slate-200" aria-label="Open menu"><i data-lucide="menu" class="w-5 h-5"></i></button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-slate-200 bg-white">
+    <nav class="px-4 py-3 flex flex-col text-sm font-medium">
+      <a href="#packages" class="mobile-link" data-i18n="nav.packages">Packages</a>
+      <a href="#services" class="mobile-link" data-i18n="nav.services">Services</a>
+      <a href="#journey" class="mobile-link" data-i18n="nav.journey">How It Works</a>
+      <a href="#advisory" class="mobile-link" data-i18n="nav.advisory">Travel Advisory</a>
+      <a href="#faq" class="mobile-link" data-i18n="nav.faq">FAQ</a>
+      <a href="#contact" class="mobile-link" data-i18n="nav.contact">Contact</a>
+      <a href="#contact" class="btn-primary justify-center mt-2" data-i18n="cta.quote">Get a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- Hero -->
+<section id="home" class="relative bg-navy-700 text-white overflow-hidden">
+  <div class="absolute inset-0 pattern-bg opacity-[0.07]"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-24 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7">
+      <p class="font-arabic text-2xl text-gold-500 mb-4 arabic-line" dir="rtl" lang="ar">لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ</p>
+      <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase bg-white/10 border border-white/15 rounded-full px-3 py-1.5">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-gold-500"></i> <span data-i18n="hero.badge">Your Trusted Travel Partner</span>
+      </span>
+      <h1 class="hero-title mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]" data-i18n="hero.title">
+        Spiritual journeys <br class="hidden sm:block" />that <span class="text-gold-500">last forever.</span>
+      </h1>
+      <p class="mt-6 text-lg text-navy-100 max-w-xl leading-relaxed" data-i18n="hero.sub">
+        Carefully planned Hajj & Umrah packages from Karachi — visas, flights, hotels near the Haram, transport and guided Ziyarat, all handled by one dedicated team.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#packages" class="btn-light"><span data-i18n="hero.explore">Explore Packages</span> <i data-lucide="arrow-right" class="w-4 h-4 flip-rtl"></i></a>
+        <a href="https://wa.me/923212255342" target="_blank" rel="noopener" class="btn-ghost-light"><i data-lucide="message-circle" class="w-4 h-4"></i> <span data-i18n="hero.whatsapp">Chat on WhatsApp</span></a>
+      </div>
+      <div class="mt-12 grid grid-cols-3 max-w-lg divide-x rtl:divide-x-reverse divide-white/15 border-t border-white/15 pt-6">
+        <div class="pe-4"><div class="text-3xl font-extrabold" dir="ltr">5,000+</div><div class="text-xs text-navy-200 mt-1" data-i18n="stat.pilgrims">Pilgrims served</div></div>
+        <div class="px-4"><div class="text-3xl font-extrabold" dir="ltr">10+</div><div class="text-xs text-navy-200 mt-1" data-i18n="stat.years">Years of service</div></div>
+        <div class="ps-4"><div class="text-3xl font-extrabold" dir="ltr">24/7</div><div class="text-xs text-navy-200 mt-1" data-i18n="stat.support">Support in KSA</div></div>
+      </div>
+    </div>
+
+    <!-- Quick finder card -->
+    <div class="lg:col-span-5">
+      <div class="bg-white text-slate-800 rounded-2xl p-6 sm:p-7">
+        <div class="flex items-center justify-between gap-3">
+          <h2 class="font-bold text-lg text-navy-800" data-i18n="finder.title">Find your package</h2>
+          <span class="text-[11px] font-semibold text-brand-600 bg-brand-50 px-2 py-1 rounded-md" data-i18n="finder.year">1446–1447 AH</span>
+        </div>
+        <form id="finderForm" class="mt-5 space-y-4">
+          <div>
+            <label class="field-label" data-i18n="finder.type">Journey type</label>
+            <div class="grid grid-cols-2 gap-2 mt-1.5" id="finderType">
+              <button type="button" data-val="umrah" class="seg-btn active"><i data-lucide="moon-star" class="w-4 h-4"></i> <span data-i18n="common.umrah">Umrah</span></button>
+              <button type="button" data-val="hajj" class="seg-btn"><i data-lucide="landmark" class="w-4 h-4"></i> <span data-i18n="common.hajj">Hajj</span></button>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="field-label" for="finderStay" data-i18n="finder.hotel">Hotel class</label>
+              <select id="finderStay" class="field mt-1.5">
+                <option value="all" data-i18n="common.any">Any</option>
+                <option value="3" data-i18n="finder.s3">3 Star</option>
+                <option value="4" data-i18n="finder.s4">4 Star</option>
+                <option value="5" data-i18n="finder.s5">5 Star</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="finderPax" data-i18n="finder.pax">Travellers</label>
+              <select id="finderPax" class="field mt-1.5">
+                <option>1</option><option selected>2</option><option>3</option><option>4</option><option>5+</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn-primary w-full justify-center py-3"><i data-lucide="search" class="w-4 h-4"></i> <span data-i18n="finder.show">Show Packages</span></button>
+        </form>
+        <div class="mt-5 pt-5 border-t border-slate-100 grid grid-cols-3 gap-2 text-center text-[11px] text-slate-500">
+          <div class="flex flex-col items-center gap-1.5"><i data-lucide="stamp" class="w-4 h-4 text-navy-600"></i><span data-i18n="finder.visa">Visa included</span></div>
+          <div class="flex flex-col items-center gap-1.5"><i data-lucide="plane" class="w-4 h-4 text-navy-600"></i><span data-i18n="finder.flights">Return flights</span></div>
+          <div class="flex flex-col items-center gap-1.5"><i data-lucide="bus" class="w-4 h-4 text-navy-600"></i><span data-i18n="finder.transport">Transport</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<section class="border-b border-slate-200 bg-sand-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+    <div class="flex items-center gap-3"><span class="icon-chip"><i data-lucide="badge-check" class="w-5 h-5"></i></span><span class="font-semibold text-navy-800" data-i18n="trust.1">Registered Operator</span></div>
+    <div class="flex items-center gap-3"><span class="icon-chip"><i data-lucide="hotel" class="w-5 h-5"></i></span><span class="font-semibold text-navy-800" data-i18n="trust.2">Hotels near Haram</span></div>
+    <div class="flex items-center gap-3"><span class="icon-chip"><i data-lucide="users" class="w-5 h-5"></i></span><span class="font-semibold text-navy-800" data-i18n="trust.3">Experienced Guides</span></div>
+    <div class="flex items-center gap-3"><span class="icon-chip"><i data-lucide="wallet" class="w-5 h-5"></i></span><span class="font-semibold text-navy-800" data-i18n="trust.4">Transparent Pricing</span></div>
+  </div>
+</section>
+
+<!-- Packages -->
+<section id="packages" class="py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div>
+        <p class="eyebrow" data-i18n="pk.eyebrow">Our Packages</p>
+        <h2 class="section-title" data-i18n="pk.title">Hajj & Umrah packages for every pilgrim</h2>
+        <p class="mt-3 text-slate-600 max-w-2xl" data-i18n="pk.sub">From budget-friendly group Umrah to premium Hajj with 5-star stays — every package includes visa processing, return air tickets, accommodation and ground transport.</p>
+      </div>
+      <div class="flex flex-wrap gap-2" id="pkgFilters">
+        <button class="chip active" data-filter="all" data-i18n="common.all">All</button>
+        <button class="chip" data-filter="umrah" data-i18n="common.umrah">Umrah</button>
+        <button class="chip" data-filter="hajj" data-i18n="common.hajj">Hajj</button>
+      </div>
+    </div>
+
+    <div class="mt-6 flex flex-wrap items-center gap-3 text-sm">
+      <span class="text-slate-500" data-i18n="pk.hotelClass">Hotel class:</span>
+      <div class="flex gap-1.5" id="starFilters">
+        <button class="mini-chip active" data-star="all" data-i18n="common.any">Any</button>
+        <button class="mini-chip" data-star="3">3★</button>
+        <button class="mini-chip" data-star="4">4★</button>
+        <button class="mini-chip" data-star="5">5★</button>
+      </div>
+      <span class="ms-auto text-slate-500" id="pkgCount"></span>
+    </div>
+
+    <div id="pkgGrid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    <div id="pkgEmpty" class="hidden mt-8 text-center py-16 border border-dashed border-slate-300 rounded-2xl">
+      <i data-lucide="search-x" class="w-8 h-8 mx-auto text-slate-400"></i>
+      <p class="mt-3 font-semibold text-navy-800" data-i18n="pk.emptyT">No packages match these filters</p>
+      <p class="text-sm text-slate-500 mt-1" data-i18n="pk.emptyS">Try another hotel class, or contact us for a custom package.</p>
+    </div>
+
+    <p class="mt-8 text-xs text-slate-500 flex items-start gap-2"><i data-lucide="info" class="w-4 h-4 shrink-0"></i><span data-i18n="pk.note">Prices are per person on sharing basis and indicative. Final rates depend on travel dates, airline and hotel availability — please contact our team for the latest confirmed quote.</span></p>
+  </div>
+</section>
+
+<!-- Custom package banner -->
+<section class="px-4 sm:px-6">
+  <div class="max-w-7xl mx-auto bg-brand-600 rounded-2xl text-white relative overflow-hidden">
+    <div class="absolute inset-0 pattern-bg opacity-[0.08]"></div>
+    <div class="relative px-6 sm:px-10 py-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div>
+        <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight" data-i18n="banner.title">Need a custom or group package?</h3>
+        <p class="mt-2 text-brand-100 max-w-xl" data-i18n="banner.sub">Families, corporate groups and trade partners — tell us your dates and budget and we'll tailor a package just for you.</p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="#contact" class="btn-light !text-brand-700" data-i18n="banner.cta">Request Custom Quote</a>
+        <a href="tel:+923212255342" class="btn-ghost-light"><i data-lucide="phone" class="w-4 h-4"></i> <span data-i18n="banner.call">Call Now</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="eyebrow" data-i18n="sv.eyebrow">What We Do</p>
+      <h2 class="section-title" data-i18n="sv.title">Complete travel services under one roof</h2>
+      <p class="mt-3 text-slate-600" data-i18n="sv.sub">Your journey, our commitment — from the first inquiry to your safe return home.</p>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="service-card">
+        <span class="service-icon bg-navy-50 text-navy-700"><i data-lucide="moon-star" class="w-6 h-6"></i></span>
+        <h3 class="mt-5 font-bold text-navy-800 text-lg" data-i18n="sv.1t">Umrah & Hajj</h3>
+        <p class="mt-2 text-sm text-slate-600 leading-relaxed" data-i18n="sv.1d">Group and private packages with hotels close to Masjid al-Haram and Masjid an-Nabawi.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon bg-brand-50 text-brand-600"><i data-lucide="ticket" class="w-6 h-6"></i></span>
+        <h3 class="mt-5 font-bold text-navy-800 text-lg" data-i18n="sv.2t">Airline Ticketing</h3>
+        <p class="mt-2 text-sm text-slate-600 leading-relaxed" data-i18n="sv.2d">Domestic and international tickets on PIA, Saudia, Emirates, Qatar, Flydubai and more at competitive fares.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon bg-navy-50 text-navy-700"><i data-lucide="stamp" class="w-6 h-6"></i></span>
+        <h3 class="mt-5 font-bold text-navy-800 text-lg" data-i18n="sv.3t">Visa Assistance</h3>
+        <p class="mt-2 text-sm text-slate-600 leading-relaxed" data-i18n="sv.3d">Umrah, visit and tourist visa processing with complete documentation guidance.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon bg-brand-50 text-brand-600"><i data-lucide="globe" class="w-6 h-6"></i></span>
+        <h3 class="mt-5 font-bold text-navy-800 text-lg" data-i18n="sv.4t">Worldwide Travel</h3>
+        <p class="mt-2 text-sm text-slate-600 leading-relaxed" data-i18n="sv.4d">Holiday tours to Dubai, Turkey, Malaysia, Baku and beyond — hotels, transfers and sightseeing included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Journey -->
+<section id="journey" class="py-20 lg:py-24 bg-sand-50 border-y border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-14 items-start">
+    <div class="lg:sticky lg:top-28">
+      <p class="eyebrow" data-i18n="jr.eyebrow">How It Works</p>
+      <h2 class="section-title" data-i18n="jr.title">Your journey in four simple steps</h2>
+      <p class="mt-3 text-slate-600 max-w-lg" data-i18n="jr.sub">We take care of every detail so you can focus entirely on your ibadah. Our team stays with you before departure and throughout your stay in the Holy Cities.</p>
+      <div class="mt-8 grid grid-cols-2 gap-4 max-w-md">
+        <div class="bg-white border border-slate-200 rounded-xl p-4">
+          <i data-lucide="heart-handshake" class="w-5 h-5 text-brand-600"></i>
+          <div class="mt-3 font-semibold text-navy-800 text-sm" data-i18n="jr.b1t">Pre-departure training</div>
+          <div class="text-xs text-slate-500 mt-1" data-i18n="jr.b1d">Hajj & Umrah guidance sessions</div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-4">
+          <i data-lucide="headset" class="w-5 h-5 text-brand-600"></i>
+          <div class="mt-3 font-semibold text-navy-800 text-sm" data-i18n="jr.b2t">On-ground support</div>
+          <div class="text-xs text-slate-500 mt-1" data-i18n="jr.b2d">Representatives in Makkah & Madinah</div>
+        </div>
+      </div>
+    </div>
+    <ol class="relative space-y-4">
+      <li class="step-card">
+        <span class="step-num">01</span>
+        <div>
+          <h3 class="font-bold text-navy-800" data-i18n="jr.s1t">Choose your package</h3>
+          <p class="text-sm text-slate-600 mt-1" data-i18n="jr.s1d">Browse our Hajj & Umrah options or ask us for a custom plan that fits your dates and budget.</p>
+        </div>
+      </li>
+      <li class="step-card">
+        <span class="step-num">02</span>
+        <div>
+          <h3 class="font-bold text-navy-800" data-i18n="jr.s2t">Submit documents</h3>
+          <p class="text-sm text-slate-600 mt-1" data-i18n="jr.s2d">Passport (6+ months validity), CNIC copy, photographs and vaccination certificates — we guide you through it all.</p>
+        </div>
+      </li>
+      <li class="step-card">
+        <span class="step-num">03</span>
+        <div>
+          <h3 class="font-bold text-navy-800" data-i18n="jr.s3t">Visa & bookings confirmed</h3>
+          <p class="text-sm text-slate-600 mt-1" data-i18n="jr.s3d">We process your visa and confirm flights, hotels and transport. You receive a complete travel kit and itinerary.</p>
+        </div>
+      </li>
+      <li class="step-card">
+        <span class="step-num">04</span>
+        <div>
+          <h3 class="font-bold text-navy-800" data-i18n="jr.s4t">Travel with peace of mind</h3>
+          <p class="text-sm text-slate-600 mt-1" data-i18n="jr.s4d">Airport assistance in Karachi, transfers in KSA, guided Ziyarat and 24/7 support until you are safely home.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Advisory -->
+<section id="advisory" class="py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-7">
+        <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-50 border border-brand-100 rounded-full px-3 py-1.5">
+          <i data-lucide="megaphone" class="w-3.5 h-3.5"></i> <span data-i18n="adv.badge">Important Vaccination Update</span>
+        </span>
+        <h2 class="section-title mt-4" data-i18n="adv.title">Karachi Umrah passengers</h2>
+        <p class="mt-3 text-slate-600" data-i18n="adv.sub">All Umrah passengers travelling from <strong class="text-navy-800">Karachi Airport from 25th September onwards</strong> must have the following <strong class="text-navy-800">3 vaccinations</strong>:</p>
+
+        <div class="mt-6 grid grid-cols-3 gap-3">
+          <div class="vax-card border-emerald-200 bg-emerald-50/60">
+            <span class="vax-icon bg-emerald-700"><i data-lucide="droplet" class="w-5 h-5"></i></span>
+            <span class="font-bold text-emerald-900 text-sm" data-i18n="adv.v1">1. Polio</span>
+          </div>
+          <div class="vax-card border-brand-100 bg-brand-50/60">
+            <span class="vax-icon bg-brand-600"><i data-lucide="brain" class="w-5 h-5"></i></span>
+            <span class="font-bold text-brand-700 text-sm" data-i18n="adv.v2">2. Meningitis</span>
+          </div>
+          <div class="vax-card border-navy-100 bg-navy-50/60">
+            <span class="vax-icon bg-navy-600"><i data-lucide="wind" class="w-5 h-5"></i></span>
+            <span class="font-bold text-navy-700 text-sm" data-i18n="adv.v3">3. Influenza</span>
+          </div>
+        </div>
+
+        <div class="mt-6 grid md:grid-cols-2 gap-4">
+          <div class="rounded-xl border border-slate-200 p-5">
+            <div class="flex items-center gap-3">
+              <span class="w-9 h-9 rounded-lg bg-brand-600 text-white grid place-items-center shrink-0"><i data-lucide="plane" class="w-4 h-4"></i></span>
+              <div><div class="text-[11px] font-bold text-brand-600 uppercase tracking-wider" data-i18n="adv.o1">Option 1</div><div class="font-bold text-navy-800 text-sm" data-i18n="adv.o1t">At Karachi Airport</div></div>
+            </div>
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed" data-i18n="adv.o1d">Passengers can get the required vaccinations at the airport. Report at least <strong class="text-brand-600">7 to 8 hours in advance</strong> to allow sufficient time for vaccination and other formalities.</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 p-5">
+            <div class="flex items-center gap-3">
+              <span class="w-9 h-9 rounded-lg bg-navy-700 text-white grid place-items-center shrink-0"><i data-lucide="syringe" class="w-4 h-4"></i></span>
+              <div><div class="text-[11px] font-bold text-navy-600 uppercase tracking-wider" data-i18n="adv.o2">Option 2</div><div class="font-bold text-navy-800 text-sm" data-i18n="adv.o2t">In Advance</div></div>
+            </div>
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed" data-i18n="adv.o2d">Visit the <strong class="text-navy-800">International Travellers Vaccination Centre, Karachi</strong> to have your vaccinations done in advance.</p>
+            <a href="https://maps.app.goo.gl/TwjskCLfzNCXjeDo9" target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-700 hover:text-brand-600"><i data-lucide="map-pin" class="w-4 h-4"></i> <span data-i18n="adv.map">Open in Google Maps</span> <i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+          </div>
+        </div>
+
+        <div class="mt-4 flex items-start gap-3 rounded-xl bg-brand-600 text-white p-4">
+          <i data-lucide="alert-circle" class="w-5 h-5 shrink-0 mt-0.5"></i>
+          <p class="text-sm font-medium" data-i18n="adv.warn">We strongly recommend getting the vaccinations completed in advance to avoid unnecessary delays or inconvenience at the airport.</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <button id="flyerBtn" class="group block w-full rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 text-start">
+          <img src="assets/BinAhmed.jpeg" alt="Vaccination update flyer" class="w-full aspect-[4/5] object-cover object-top transition duration-300 group-hover:scale-[1.02]" />
+          <div class="flex items-center justify-between px-4 py-3 border-t border-slate-200 bg-white">
+            <span class="text-sm font-semibold text-navy-800" data-i18n="adv.flyer">Official notice — view full flyer</span>
+            <i data-lucide="maximize-2" class="w-4 h-4 text-slate-500"></i>
+          </div>
+        </button>
+        <a href="assets/BinAhmed.jpeg" download class="mt-3 btn-outline w-full justify-center"><i data-lucide="download" class="w-4 h-4"></i> <span data-i18n="adv.download">Download & share with passengers</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-20 lg:py-24 bg-navy-700 text-white relative overflow-hidden">
+  <div class="absolute inset-0 pattern-bg opacity-[0.06]"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <p class="eyebrow !text-gold-500" data-i18n="ts.eyebrow">Testimonials</p>
+        <h2 class="section-title !text-white" data-i18n="ts.title">Words from our pilgrims</h2>
+      </div>
+      <div class="flex items-center gap-2 text-sm text-navy-100">
+        <div class="flex text-gold-500" id="starsRow"></div> <span data-i18n="ts.rating">4.9 average from pilgrim feedback</span>
+      </div>
+    </div>
+    <div class="mt-10 grid md:grid-cols-3 gap-5" id="testimonials"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-20 lg:py-24">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="text-center">
+      <p class="eyebrow" data-i18n="faq.eyebrow">FAQ</p>
+      <h2 class="section-title" data-i18n="faq.title">Frequently asked questions</h2>
+    </div>
+    <div class="mt-10 divide-y divide-slate-200 border-y border-slate-200" id="faqList"></div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 lg:py-24 bg-sand-50 border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-5">
+      <p class="eyebrow" data-i18n="ct.eyebrow">Contact Us</p>
+      <h2 class="section-title" data-i18n="ct.title">Begin your blessed journey</h2>
+      <p class="mt-3 text-slate-600" data-i18n="ct.sub">Send us your details and our team will get back to you with the best available package. You can also visit our office or call us directly.</p>
+
+      <div class="mt-8 space-y-3">
+        <div class="contact-row">
+          <span class="icon-chip !bg-brand-600 !text-white"><i data-lucide="map-pin" class="w-5 h-5"></i></span>
+          <div><div class="text-xs text-slate-500" data-i18n="ct.office">Office Address</div><div class="font-semibold text-navy-800" data-i18n="address">SA 74, Sector 3, North Karachi</div></div>
+        </div>
+        <a href="tel:+923212255342" class="contact-row hover:border-navy-200">
+          <span class="icon-chip !bg-navy-700 !text-white"><i data-lucide="phone" class="w-5 h-5"></i></span>
+          <div><div class="text-xs text-slate-500" data-i18n="ct.call">Call Us</div><div class="font-semibold text-navy-800"><span dir="ltr">0321 2255342</span> · <span dir="ltr">0311 2600696</span></div></div>
+        </a>
+        <a href="https://wa.me/923212255342" target="_blank" rel="noopener" class="contact-row hover:border-navy-200">
+          <span class="icon-chip !bg-emerald-600 !text-white"><i data-lucide="message-circle" class="w-5 h-5"></i></span>
+          <div><div class="text-xs text-slate-500" data-i18n="ct.wa">WhatsApp</div><div class="font-semibold text-navy-800" data-i18n="ct.waD">Chat with our team instantly</div></div>
+        </a>
+        <div class="contact-row">
+          <span class="icon-chip"><i data-lucide="clock" class="w-5 h-5"></i></span>
+          <div><div class="text-xs text-slate-500" data-i18n="ct.hours">Office Hours</div><div class="font-semibold text-navy-800" data-i18n="ct.hoursD">Mon – Sat, 10:00 AM – 8:00 PM</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7">
+      <form id="inquiryForm" class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8" novalidate>
+        <h3 class="font-bold text-lg text-navy-800" data-i18n="form.title">Package inquiry</h3>
+        <p class="text-sm text-slate-500 mt-1" data-i18n="form.sub">Your inquiry will be sent to our team on WhatsApp.</p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="field-label" for="fName" data-i18n="form.name">Full name *</label>
+            <input id="fName" class="field mt-1.5" placeholder="Muhammad Ali" data-i18n-ph="form.namePh" required />
+          </div>
+          <div>
+            <label class="field-label" for="fPhone" data-i18n="form.phone">Phone / WhatsApp *</label>
+            <input id="fPhone" class="field mt-1.5" placeholder="03XX XXXXXXX" dir="ltr" required />
+          </div>
+          <div>
+            <label class="field-label" for="fPackage" data-i18n="form.package">Package</label>
+            <select id="fPackage" class="field mt-1.5"></select>
+          </div>
+          <div>
+            <label class="field-label" for="fMonth" data-i18n="form.month">Preferred travel month</label>
+            <input id="fMonth" type="month" class="field mt-1.5" />
+          </div>
+          <div>
+            <label class="field-label" for="fAdults" data-i18n="form.adults">Adults</label>
+            <input id="fAdults" type="number" min="1" value="2" class="field mt-1.5" />
+          </div>
+          <div>
+            <label class="field-label" for="fChildren" data-i18n="form.children">Children</label>
+            <input id="fChildren" type="number" min="0" value="0" class="field mt-1.5" />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="field-label" for="fMsg" data-i18n="form.msg">Message</label>
+            <textarea id="fMsg" rows="4" class="field mt-1.5 resize-none" placeholder="Room sharing preference, departure city, special requirements..." data-i18n-ph="form.msgPh"></textarea>
+          </div>
+        </div>
+        <p id="formError" class="hidden mt-4 text-sm text-brand-600 flex items-center gap-2"><i data-lucide="alert-circle" class="w-4 h-4"></i><span></span></p>
+        <button class="btn-primary mt-6 w-full sm:w-auto justify-center py-3 px-6"><i data-lucide="send" class="w-4 h-4 flip-rtl"></i> <span data-i18n="form.send">Send Inquiry</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-navy-900 text-navy-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <div class="flex items-center gap-3">
+        <span class="logo-crop w-12 h-12"><img src="assets/BinAhmed.jpeg" alt="" /></span>
+        <span class="leading-tight brand-text" dir="ltr">
+          <span class="block font-extrabold text-white text-[17px]">BIN AHMED</span>
+          <span class="block text-[11px] font-semibold text-brand-500 tracking-[0.18em]">TRAVEL & TOUR</span>
+        </span>
+      </div>
+      <p class="mt-4 text-sm text-navy-200 leading-relaxed" data-i18n="ft.about">Your trusted travel partner for Hajj, Umrah and worldwide travel. Safe travel, blessed journey.</p>
+    </div>
+    <div>
+      <h4 class="footer-title" data-i18n="nav.packages">Packages</h4>
+      <ul class="footer-list">
+        <li><a href="#packages" data-jump="umrah" data-i18n="ft.umrah">Umrah Packages</a></li>
+        <li><a href="#packages" data-jump="hajj" data-i18n="ft.hajj">Hajj Packages</a></li>
+        <li><a href="#contact" data-i18n="ft.group">Group & Custom</a></li>
+        <li><a href="#advisory" data-i18n="nav.advisory">Travel Advisory</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer-title" data-i18n="nav.services">Services</h4>
+      <ul class="footer-list">
+        <li><a href="#services" data-i18n="sv.1t">Umrah & Hajj</a></li>
+        <li><a href="#services" data-i18n="sv.2t">Airline Ticketing</a></li>
+        <li><a href="#services" data-i18n="sv.3t">Visa Assistance</a></li>
+        <li><a href="#services" data-i18n="sv.4t">Worldwide Travel</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer-title" data-i18n="ft.touch">Get in touch</h4>
+      <ul class="space-y-3 text-sm">
+        <li class="flex gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5 shrink-0 text-brand-500"></i><span data-i18n="address">SA 74, Sector 3, North Karachi</span></li>
+        <li class="flex gap-2"><i data-lucide="phone" class="w-4 h-4 mt-0.5 shrink-0 text-brand-500"></i><span><a href="tel:+923212255342" class="hover:text-white" dir="ltr">0321 2255342</a><br /><a href="tel:+923112600696" class="hover:text-white" dir="ltr">0311 2600696</a></span></li>
+      </ul>
+      <button class="lang-btn lang-btn-dark mt-5" data-lang-toggle>
+        <i data-lucide="languages" class="w-4 h-4"></i><span data-lang-label>اردو</span>
+      </button>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row justify-between gap-2 text-xs text-navy-200">
+      <span>© <span id="year"></span> <span data-i18n="ft.rights">Bin Ahmed Travel & Tour. All rights reserved.</span></span>
+      <span class="italic" data-i18n="ft.tagline">Your Journey, Our Commitment.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/923212255342" target="_blank" rel="noopener" aria-label="WhatsApp" class="fixed bottom-5 start-5 z-40 w-12 h-12 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white grid place-items-center">
+  <svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.870 9.870 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.860 9.860 0 01-1.510-5.260c.001-5.450 4.436-9.884 9.888-9.884 2.640 0 5.122 1.030 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.450-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.050 0C5.495 0 .160 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.480-8.413z"/></svg>
+</a>
+
+<!-- Package modal -->
+<div id="pkgModal" class="fixed inset-0 z-50 hidden">
+  <div class="absolute inset-0 bg-navy-900/60" data-close></div>
+  <div class="absolute inset-x-0 bottom-0 sm:inset-0 sm:grid sm:place-items-center sm:p-6 pointer-events-none">
+    <div class="modal-panel pointer-events-auto bg-white w-full sm:max-w-3xl max-h-[92vh] rounded-t-2xl sm:rounded-2xl overflow-hidden flex flex-col" id="pkgModalBody"></div>
+  </div>
+</div>
+
+<!-- Flyer lightbox -->
+<div id="flyerModal" class="fixed inset-0 z-50 hidden bg-navy-900/90 p-4 overflow-auto">
+  <button class="fixed top-4 end-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white grid place-items-center" data-close aria-label="Close"><i data-lucide="x" class="w-5 h-5"></i></button>
+  <img src="assets/BinAhmed.jpeg" alt="Vaccination update flyer" class="mx-auto max-w-full sm:max-w-xl rounded-xl" />
+</div>
+
+<!-- Toast -->
+<div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-[60] hidden bg-navy-800 text-white text-sm px-4 py-3 rounded-xl flex items-center gap-2"></div>
+
+<script src="js/data.js"></script>
+<script src="js/i18n.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
