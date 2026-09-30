@@ -1,4 +1,4 @@
-import { createIcons, icons } from 'https://cdn.jsdelivr.net/npm/lucide@latest/+esm';
+import { createIcons, icons } from './vendor/lucide.js';
 
 const PACKAGES = window.PACKAGES || [];
 const UR = window.I18N_UR || {};

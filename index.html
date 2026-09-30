@@ -7,28 +7,12 @@
 <meta name="description" content="Bin Ahmed Travel & Tour — Your Trusted Travel Partner. Hajj & Umrah packages, airline ticketing, visa assistance and worldwide travel from Karachi." />
 <meta name="theme-color" content="#1b2f6e" />
 <link rel="icon" href="icon.svg" type="image/svg+xml" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/fonts.css" />
 <script>
 /* Apply saved language before paint to avoid a flash */
 (function(){try{var q=new URLSearchParams(location.search).get('lang');var l=q||localStorage.getItem('ba_lang');if(l==='ur'){document.documentElement.lang='ur';document.documentElement.dir='rtl';}}catch(e){}})();
 </script>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: { sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'], arabic: ['Amiri', 'serif'] },
-      colors: {
-        navy: { 50:'#eef2fb', 100:'#dbe3f6', 200:'#b5c5ec', 500:'#2f4a9e', 600:'#243c86', 700:'#1b2f6e', 800:'#142456', 900:'#0d1a40' },
-        brand: { 50:'#fdecee', 100:'#fbd5da', 500:'#e02a3f', 600:'#c81f33', 700:'#a8182a' },
-        sand: { 50:'#faf8f4', 100:'#f3efe6' },
-        gold: { 500:'#c9a24a' }
-      }
-    }
-  }
-}
-</script>
+<link rel="stylesheet" href="css/tailwind.css" />
 <link rel="stylesheet" href="css/styles.css" />
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon-180.png">
@@ -236,27 +220,205 @@ tailwind.config = {
       <h2 class="section-title" data-i18n="sv.title">Complete travel services under one roof</h2>
       <p class="mt-3 text-slate-600" data-i18n="sv.sub">Your journey, our commitment — from the first inquiry to your safe return home.</p>
     </div>
-    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="service-card">
+    <div class="mt-10 flex flex-wrap justify-center gap-2">
+      <a href="#packages" class="chip"><i data-lucide="moon-star" class="w-4 h-4"></i> <span data-i18n="sv.1t">Umrah &amp; Hajj</span></a>
+      <a href="#ticketing" class="chip"><i data-lucide="ticket" class="w-4 h-4"></i> <span data-i18n="sv.2t">Airline Ticketing</span></a>
+      <a href="#visa" class="chip"><i data-lucide="stamp" class="w-4 h-4"></i> <span data-i18n="sv.3t">Visa Assistance</span></a>
+      <a href="#worldwide" class="chip"><i data-lucide="globe" class="w-4 h-4"></i> <span data-i18n="sv.4t">Worldwide Travel</span></a>
+    </div>
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <a href="#packages" class="service-card block">
         <span class="service-icon bg-navy-50 text-navy-700"><i data-lucide="moon-star" class="w-6 h-6"></i></span>
-        <h3 class="mt-5 font-bold text-navy-800 text-lg" data-i18n="sv.1t">Umrah & Hajj</h3>
+        <h3 class="mt-5 font-bold text-navy-800 text-lg" data-i18n="sv.1t">Umrah &amp; Hajj</h3>
         <p class="mt-2 text-sm text-slate-600 leading-relaxed" data-i18n="sv.1d">Group and private packages with hotels close to Masjid al-Haram and Masjid an-Nabawi.</p>
-      </div>
-      <div class="service-card">
+        <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600"><span data-i18n="sv.more">Learn more</span> <i data-lucide="arrow-right" class="w-4 h-4 flip-rtl"></i></span>
+      </a>
+      <a href="#ticketing" class="service-card block">
         <span class="service-icon bg-brand-50 text-brand-600"><i data-lucide="ticket" class="w-6 h-6"></i></span>
         <h3 class="mt-5 font-bold text-navy-800 text-lg" data-i18n="sv.2t">Airline Ticketing</h3>
         <p class="mt-2 text-sm text-slate-600 leading-relaxed" data-i18n="sv.2d">Domestic and international tickets on PIA, Saudia, Emirates, Qatar, Flydubai and more at competitive fares.</p>
-      </div>
-      <div class="service-card">
+        <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600"><span data-i18n="sv.more">Learn more</span> <i data-lucide="arrow-right" class="w-4 h-4 flip-rtl"></i></span>
+      </a>
+      <a href="#visa" class="service-card block">
         <span class="service-icon bg-navy-50 text-navy-700"><i data-lucide="stamp" class="w-6 h-6"></i></span>
         <h3 class="mt-5 font-bold text-navy-800 text-lg" data-i18n="sv.3t">Visa Assistance</h3>
         <p class="mt-2 text-sm text-slate-600 leading-relaxed" data-i18n="sv.3d">Umrah, visit and tourist visa processing with complete documentation guidance.</p>
-      </div>
-      <div class="service-card">
+        <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600"><span data-i18n="sv.more">Learn more</span> <i data-lucide="arrow-right" class="w-4 h-4 flip-rtl"></i></span>
+      </a>
+      <a href="#worldwide" class="service-card block">
         <span class="service-icon bg-brand-50 text-brand-600"><i data-lucide="globe" class="w-6 h-6"></i></span>
         <h3 class="mt-5 font-bold text-navy-800 text-lg" data-i18n="sv.4t">Worldwide Travel</h3>
         <p class="mt-2 text-sm text-slate-600 leading-relaxed" data-i18n="sv.4d">Holiday tours to Dubai, Turkey, Malaysia, Baku and beyond — hotels, transfers and sightseeing included.</p>
+        <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600"><span data-i18n="sv.more">Learn more</span> <i data-lucide="arrow-right" class="w-4 h-4 flip-rtl"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Airline Ticketing -->
+<section id="ticketing" class="py-20 lg:py-24 border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5 lg:sticky lg:top-28">
+        <span class="service-icon bg-brand-50 text-brand-600"><i data-lucide="ticket" class="w-6 h-6"></i></span>
+        <p class="eyebrow mt-5" data-i18n="tk.eyebrow">Airline Ticketing</p>
+        <h2 class="section-title" data-i18n="tk.title">Flights booked at the best fares</h2>
+        <p class="mt-3 text-slate-600" data-i18n="tk.sub">Domestic and international ticketing on leading airlines — with honest fare guidance, date-change help and full travel support from Karachi.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="https://wa.me/923212255342" target="_blank" rel="noopener" class="btn-primary"><i data-lucide="message-circle" class="w-4 h-4"></i> <span data-i18n="tk.cta">Get a Flight Quote</span></a>
+          <a href="tel:+923212255342" class="btn-outline"><i data-lucide="phone" class="w-4 h-4"></i> <span data-i18n="tk.call">Call Now</span></a>
+        </div>
       </div>
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+        <div class="service-card">
+          <span class="service-icon bg-navy-50 text-navy-700"><i data-lucide="plane" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="tk.f1t">Domestic &amp; international ticketing</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="tk.f1d">Routes across Pakistan and worldwide on scheduled and low-cost carriers.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon bg-brand-50 text-brand-600"><i data-lucide="building-2" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="tk.f2t">Major airlines</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="tk.f2d">PIA, Saudia, Emirates, Qatar, Etihad, Turkish, Flydubai, AirSial and more.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon bg-navy-50 text-navy-700"><i data-lucide="users" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="tk.f3t">Group &amp; corporate bookings</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="tk.f3d">Special fares and dedicated handling for families, groups and companies.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon bg-brand-50 text-brand-600"><i data-lucide="refresh-cw" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="tk.f4t">Date change &amp; refunds</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="tk.f4d">Assistance with rebooking, cancellations and refund follow-ups.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon bg-navy-50 text-navy-700"><i data-lucide="search" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="tk.f5t">Best-fare &amp; fare-rule guidance</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="tk.f5d">We compare options and explain baggage, seating and change rules before you pay.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon bg-brand-50 text-brand-600"><i data-lucide="luggage" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="tk.f6t">Seat, meal &amp; baggage requests</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="tk.f6d">Preferred seats, special meals and extra baggage arranged on request.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="step-card"><span class="step-num">01</span><div><h3 class="font-bold text-navy-800 text-sm" data-i18n="tk.s1t">Share route &amp; dates</h3><p class="text-sm text-slate-600 mt-1" data-i18n="tk.s1d">Send us your destinations, travel dates and number of passengers.</p></div></div>
+      <div class="step-card"><span class="step-num">02</span><div><h3 class="font-bold text-navy-800 text-sm" data-i18n="tk.s2t">We find the best fares</h3><p class="text-sm text-slate-600 mt-1" data-i18n="tk.s2d">Our team compares airlines and fare rules to get you the best value.</p></div></div>
+      <div class="step-card"><span class="step-num">03</span><div><h3 class="font-bold text-navy-800 text-sm" data-i18n="tk.s3t">Confirm &amp; issue ticket</h3><p class="text-sm text-slate-600 mt-1" data-i18n="tk.s3d">Pay securely and receive your e-ticket and itinerary instantly.</p></div></div>
+      <div class="step-card"><span class="step-num">04</span><div><h3 class="font-bold text-navy-800 text-sm" data-i18n="tk.s4t">Travel with support</h3><p class="text-sm text-slate-600 mt-1" data-i18n="tk.s4d">We assist with check-in, changes and any issue until you reach your destination.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Visa Assistance -->
+<section id="visa" class="py-20 lg:py-24 bg-sand-50 border-y border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5 lg:sticky lg:top-28">
+        <span class="service-icon bg-navy-50 text-navy-700"><i data-lucide="stamp" class="w-6 h-6"></i></span>
+        <p class="eyebrow mt-5" data-i18n="vs.eyebrow">Visa Assistance</p>
+        <h2 class="section-title" data-i18n="vs.title">Visas processed without the guesswork</h2>
+        <p class="mt-3 text-slate-600" data-i18n="vs.sub">Umrah, Hajj, visit, tourist and business visa processing with complete documentation guidance and embassy follow-up.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="https://wa.me/923212255342" target="_blank" rel="noopener" class="btn-primary"><i data-lucide="message-circle" class="w-4 h-4"></i> <span data-i18n="vs.cta">Start Your Visa</span></a>
+          <a href="tel:+923212255342" class="btn-outline"><i data-lucide="phone" class="w-4 h-4"></i> <span data-i18n="vs.call">Call Now</span></a>
+        </div>
+      </div>
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+        <div class="service-card">
+          <span class="service-icon bg-navy-50 text-navy-700"><i data-lucide="moon-star" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="vs.f1t">Umrah &amp; Hajj visas</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="vs.f1d">Fast processing with verified Mu'allim and hotel bookings.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon bg-brand-50 text-brand-600"><i data-lucide="globe" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="vs.f2t">Visit, tourist &amp; business visas</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="vs.f2d">Applications prepared to meet your destination country's current requirements.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon bg-navy-50 text-navy-700"><i data-lucide="clipboard-list" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="vs.f3t">Document checklist &amp; verification</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="vs.f3d">We review every document before submission to avoid costly delays.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon bg-brand-50 text-brand-600"><i data-lucide="calendar-check" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="vs.f4t">Form filling &amp; appointments</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="vs.f4d">Application forms, embassy appointments and biometrics guidance.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon bg-navy-50 text-navy-700"><i data-lucide="landmark" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="vs.f5t">Embassy &amp; consulate follow-up</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="vs.f5d">We track your case and keep you informed at every stage.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon bg-brand-50 text-brand-600"><i data-lucide="shield-check" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="vs.f6t">Travel insurance assistance</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="vs.f6d">Insurance and supporting documents arranged wherever required.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="step-card"><span class="step-num">01</span><div><h3 class="font-bold text-navy-800 text-sm" data-i18n="vs.s1t">Choose your visa type</h3><p class="text-sm text-slate-600 mt-1" data-i18n="vs.s1d">Tell us your destination and purpose of travel.</p></div></div>
+      <div class="step-card"><span class="step-num">02</span><div><h3 class="font-bold text-navy-800 text-sm" data-i18n="vs.s2t">Submit documents</h3><p class="text-sm text-slate-600 mt-1" data-i18n="vs.s2d">We give you a clear checklist and verify everything before applying.</p></div></div>
+      <div class="step-card"><span class="step-num">03</span><div><h3 class="font-bold text-navy-800 text-sm" data-i18n="vs.s3t">Application &amp; appointment</h3><p class="text-sm text-slate-600 mt-1" data-i18n="vs.s3d">We file the application and guide you through appointments and biometrics.</p></div></div>
+      <div class="step-card"><span class="step-num">04</span><div><h3 class="font-bold text-navy-800 text-sm" data-i18n="vs.s4t">Approval &amp; passport handover</h3><p class="text-sm text-slate-600 mt-1" data-i18n="vs.s4d">Collect your visa and passport — ready for departure.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Worldwide Travel -->
+<section id="worldwide" class="py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5 lg:sticky lg:top-28">
+        <span class="service-icon bg-brand-50 text-brand-600"><i data-lucide="globe" class="w-6 h-6"></i></span>
+        <p class="eyebrow mt-5" data-i18n="ww.eyebrow">Worldwide Travel</p>
+        <h2 class="section-title" data-i18n="ww.title">Holidays crafted around you</h2>
+        <p class="mt-3 text-slate-600" data-i18n="ww.sub">Curated tours to Dubai, Turkey, Malaysia, Baku, Thailand, Maldives and beyond — hotels, transfers and sightseeing included.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="https://wa.me/923212255342" target="_blank" rel="noopener" class="btn-primary"><i data-lucide="message-circle" class="w-4 h-4"></i> <span data-i18n="ww.cta">Plan My Trip</span></a>
+          <a href="tel:+923212255342" class="btn-outline"><i data-lucide="phone" class="w-4 h-4"></i> <span data-i18n="ww.call">Call Now</span></a>
+        </div>
+      </div>
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+        <div class="service-card">
+          <span class="service-icon bg-navy-50 text-navy-700"><i data-lucide="map-pin" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="ww.f1t">Popular destinations</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="ww.f1d">Dubai, Turkey, Malaysia, Baku, Thailand, Maldives, Azerbaijan and more.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon bg-brand-50 text-brand-600"><i data-lucide="hotel" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="ww.f2t">Hotels &amp; airport transfers</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="ww.f2d">Hand-picked stays with private or shared airport transfers.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon bg-navy-50 text-navy-700"><i data-lucide="map" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="ww.f3t">City tours &amp; sightseeing</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="ww.f3d">Guided city tours, desert safaris, cruises and theme parks.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon bg-brand-50 text-brand-600"><i data-lucide="route" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="ww.f4t">Custom itineraries</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="ww.f4d">Day-by-day plans tailored to your dates, pace and budget.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon bg-navy-50 text-navy-700"><i data-lucide="heart" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="ww.f5t">Family &amp; honeymoon packages</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="ww.f5d">Specially designed experiences for couples and families.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon bg-brand-50 text-brand-600"><i data-lucide="umbrella" class="w-6 h-6"></i></span>
+          <h3 class="mt-4 font-bold text-navy-800" data-i18n="ww.f6t">Insurance &amp; travel extras</h3>
+          <p class="mt-1.5 text-sm text-slate-600 leading-relaxed" data-i18n="ww.f6d">Travel insurance, SIM cards and currency exchange guidance.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="step-card"><span class="step-num">01</span><div><h3 class="font-bold text-navy-800 text-sm" data-i18n="ww.s1t">Pick your destination</h3><p class="text-sm text-slate-600 mt-1" data-i18n="ww.s1d">Browse our popular tours or tell us where you dream of going.</p></div></div>
+      <div class="step-card"><span class="step-num">02</span><div><h3 class="font-bold text-navy-800 text-sm" data-i18n="ww.s2t">Customise the itinerary</h3><p class="text-sm text-slate-600 mt-1" data-i18n="ww.s2d">We tailor hotels, activities and duration to your preferences.</p></div></div>
+      <div class="step-card"><span class="step-num">03</span><div><h3 class="font-bold text-navy-800 text-sm" data-i18n="ww.s3t">Confirm your booking</h3><p class="text-sm text-slate-600 mt-1" data-i18n="ww.s3d">Secure payment and a complete travel pack with vouchers and itinerary.</p></div></div>
+      <div class="step-card"><span class="step-num">04</span><div><h3 class="font-bold text-navy-800 text-sm" data-i18n="ww.s4t">Travel with support</h3><p class="text-sm text-slate-600 mt-1" data-i18n="ww.s4d">On-trip assistance so you can relax and enjoy every moment.</p></div></div>
     </div>
   </div>
 </section>
@@ -501,10 +663,10 @@ tailwind.config = {
     <div>
       <h4 class="footer-title" data-i18n="nav.services">Services</h4>
       <ul class="footer-list">
-        <li><a href="#services" data-i18n="sv.1t">Umrah & Hajj</a></li>
-        <li><a href="#services" data-i18n="sv.2t">Airline Ticketing</a></li>
-        <li><a href="#services" data-i18n="sv.3t">Visa Assistance</a></li>
-        <li><a href="#services" data-i18n="sv.4t">Worldwide Travel</a></li>
+        <li><a href="#packages" data-i18n="sv.1t">Umrah & Hajj</a></li>
+        <li><a href="#ticketing" data-i18n="sv.2t">Airline Ticketing</a></li>
+        <li><a href="#visa" data-i18n="sv.3t">Visa Assistance</a></li>
+        <li><a href="#worldwide" data-i18n="sv.4t">Worldwide Travel</a></li>
       </ul>
     </div>
     <div>
