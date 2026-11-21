@@ -1,0 +1,180 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  color: #263238;
+}
+
+.login-box {
+  width: 380px;
+  max-width: calc(100% - 32px);
+  margin: 100px auto;
+  padding: 35px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.07);
+}
+
+.login-box h2 {
+  color: #173b35;
+  text-align: center;
+}
+
+.login-box input,
+.login-box button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 15px;
+  border-radius: 7px;
+  font-size: 15px;
+}
+
+.login-box input {
+  border: 1px solid #dce2e7;
+}
+
+.login-box button {
+  border: 0;
+  background: #173b35;
+  color: white;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background: #24584e;
+}
+
+#message {
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background: #173b35;
+  color: white;
+  padding: 28px 20px;
+  flex-shrink: 0;
+}
+
+.sidebar h2 {
+  font-size: 21px;
+  margin-bottom: 35px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 13px;
+  margin: 8px 0;
+  color: #dce9e5;
+  text-decoration: none;
+  border-radius: 7px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: #2d5c52;
+  color: white;
+}
+
+.main-content {
+  flex: 1;
+  padding: 35px;
+  min-width: 0;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 27px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0,0,0,.04);
+}
+
+.stat-card p {
+  color: #718096;
+  margin-bottom: 8px;
+}
+
+.stat-card h2 {
+  margin: 0;
+  font-size: 30px;
+  color: #173b35;
+}
+
+.panel {
+  margin-top: 28px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0,0,0,.04);
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    width: 190px;
+  }
+
+  .main-content {
+    padding: 22px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .admin-layout {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .sidebar a {
+    display: inline-block;
+  }
+
+  .main-content {
+    padding: 18px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

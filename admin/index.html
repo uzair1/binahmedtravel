@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bin Ahmad Travel - Admin Login</title>
+  <link rel="stylesheet" href="admin.css">
+  
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <div class="login-box" id="loginBox">
+    <h2>Bin Ahmad Travel</h2>
+    <p style="text-align:center">Administrator Login</p>
+
+    <form id="loginForm">
+      <input type="email" id="email"
+        placeholder="Administrator email" required>
+
+      <input type="password" id="password"
+        placeholder="Password" required>
+
+      <button type="submit">Login</button>
+      <p style="text-align:center; margin-top:18px;">
+  <a href="#" id="forgotPassword"
+     style="color:#173b35; text-decoration:none;">
+    Forgot Password?
+  </a>
+</p>
+    </form>
+
+    <p id="message"></p>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="admin-layout" id="dashboard" hidden>
+
+    <aside class="sidebar">
+      <h2>Bin Ahmad Travel</h2>
+      <a href="#" class="active">Dashboard</a>
+      <a href="#packages">All Packages</a>
+      <a href="#umrah">Umrah Packages</a>
+      <a href="#hajj">Hajj Packages</a>
+      <a href="#" id="logoutBtn">Logout</a>
+    </aside>
+
+    <main class="main-content">
+
+      <div class="topbar">
+        <h1>Dashboard Overview</h1>
+        <span>Administrator</span>
+      </div>
+
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <p>Total Packages</p>
+          <h2 id="totalPackages">0</h2>
+        </div>
+
+        <div class="stat-card">
+          <p>Umrah Packages</p>
+          <h2 id="umrahPackages">0</h2>
+        </div>
+
+        <div class="stat-card">
+          <p>Hajj Packages</p>
+          <h2 id="hajjPackages">0</h2>
+        </div>
+
+      </div>
+
+      
+<section class="panel" id="packages">
+  <div class="topbar">
+    <h2>Package Management</h2>
+    <button id="addPackageBtn" type="button">+ Add New Package</button>
+  </div>
+
+  <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:20px;">
+    <input
+      type="search"
+      id="packageSearch"
+      placeholder="Search packages..."
+      style="flex:1; min-width:180px; padding:12px; border:1px solid #ddd; border-radius:7px;"
+    >
+
+    <select
+      id="packageFilter"
+      style="padding:12px; border:1px solid #ddd; border-radius:7px;"
+    >
+      <option value="all">All Packages</option>
+      <option value="umrah">Umrah</option>
+      <option value="hajj">Hajj</option>
+    </select>
+  </div>
+
+  <div style="overflow-x:auto;">
+    <table style="width:100%; border-collapse:collapse; text-align:left;">
+      <thead>
+        <tr style="background:#f4f6f9;">
+          <th style="padding:13px;">Package</th>
+          <th style="padding:13px;">Type</th>
+          <th style="padding:13px;">Price (PKR)</th>
+          <th style="padding:13px;">Status</th>
+          <th style="padding:13px;">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="packagesTableBody">
+        <tr>
+          <td colspan="5" style="padding:20px; text-align:center;">
+            Loading packages...
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p id="packageMessage"></p>
+</section>
+
+<div id="packageFormBox" class="panel" hidden>
+  <h2 id="packageFormTitle">Edit Package</h2>
+
+  <form id="packageForm">
+    <label>Package Name (English)</label>
+    <input type="text" id="packageNameEn" required>
+
+    <label>Package Name (Urdu)</label>
+    <input type="text" id="packageNameUr" required>
+
+    <label>Price (PKR)</label>
+    <input type="number" id="packagePrice" min="0" required>
+
+    <label>Number of Nights</label>
+    <input type="number" id="packageNights" min="1" required>
+
+    <label>Makkah Hotel</label>
+    <input type="text" id="makkahHotelEn">
+
+    <label>Madinah Hotel</label>
+    <input type="text" id="madinahHotelEn">
+
+    <label>Status</label>
+    <select id="packageStatus">
+      <option value="draft">Draft</option>
+      <option value="published">Published</option>
+      <option value="unpublished">Unpublished</option>
+    </select>
+
+    <button type="submit">Save Changes</button>
+    <button type="button" id="cancelPackageBtn">Cancel</button>
+  </form>
+
+  <p id="packageFormMessage"></p>
+</div>
+
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase.js"></script>
+
+  <script src="admin.js"></script>
+
+</body>
+
+</html>
