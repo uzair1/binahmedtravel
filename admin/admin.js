@@ -32,7 +32,7 @@ async function loadDashboard(user) {
 
   const { data: packages, error } = await supabaseClient
     .from("packages")
-    .select("id, type, status, en, ur, price, nights, makkah, madinah");
+    .select("id, type, stars, status, en, ur, price, nights, makkah, madinah");
 
   if (error) {
     message.textContent =
@@ -154,7 +154,7 @@ document.getElementById("forgotPassword").addEventListener("click", async (event
   }
 
   message.textContent =
-  "If this account exists, a password recovery email has been sent. Please check your inbox.";
+    "If this account exists, a password recovery email has been sent. Please check your inbox.";
 });
 
 
@@ -170,6 +170,54 @@ function escapeHTML(value) {
     '"': "&quot;",
     "'": "&#39;"
   })[char]);
+}
+
+
+// ======================================
+// TEXTAREA HELPERS
+// ======================================
+
+function toLines(value) {
+  return value
+    .split("\n")
+    .map(line => line.trim())
+    .filter(Boolean);
+}
+
+function itineraryToArray(value) {
+  return value
+    .split("\n")
+    .map(line => line.trim())
+    .filter(Boolean)
+    .map(line => {
+      const separator = line.indexOf("|");
+
+      if (separator === -1) return null;
+
+      return [
+        line.slice(0, separator).trim(),
+        line.slice(separator + 1).trim()
+      ];
+    })
+    .filter(item => item && item[0] && item[1]);
+}
+
+function itineraryToText(itinerary) {
+  if (!Array.isArray(itinerary)) return "";
+
+  return itinerary
+    .map(item => {
+      if (!Array.isArray(item)) return "";
+
+      const day = item[0] || "";
+      const description = item[1] || "";
+
+      if (!day && !description) return "";
+
+      return `${day} | ${description}`;
+    })
+    .filter(Boolean)
+    .join("\n");
 }
 
 
@@ -253,11 +301,6 @@ document.getElementById("packageFilter")
 
 
 // ======================================
-// EDIT PACKAGE BUTTON
-// ======================================
-
-
-// ======================================
 // ADD NEW PACKAGE BUTTON
 // ======================================
 
@@ -330,16 +373,18 @@ document.getElementById("packagesTableBody")
 
     if (!selectedPackage) return;
 
+    const english = selectedPackage.en || {};
+
     currentEditingPackageId = selectedPackage.id;
 
     document.getElementById("packageFormTitle").textContent =
-      "Edit Package: " + (selectedPackage.en?.name || selectedPackage.id);
+      "Edit Package: " + (english.name || selectedPackage.id);
 
     document.getElementById("packageType").value =
       selectedPackage.type || "umrah";
 
     document.getElementById("packageNameEn").value =
-      selectedPackage.en?.name || "";
+      english.name || "";
 
     document.getElementById("packageNameUr").value =
       selectedPackage.ur?.name || "";
@@ -359,13 +404,35 @@ document.getElementById("packagesTableBody")
     updateTotalNights();
 
     document.getElementById("makkahHotelEn").value =
-      selectedPackage.en?.makkahHotel || "";
+      english.makkahHotel || "";
 
     document.getElementById("madinahHotelEn").value =
-      selectedPackage.en?.madinahHotel || "";
+      english.madinahHotel || "";
+
+    document.getElementById("packageTagEn").value =
+      english.tag || "";
+
+    document.getElementById("packageFlightEn").value =
+      english.flight || "";
+
+    document.getElementById("packageRoomEn").value =
+      english.room || "";
+
+    document.getElementById("packageIncludesEn").value =
+      Array.isArray(english.includes)
+        ? english.includes.join("\n")
+        : "";
+
+    document.getElementById("packageExcludesEn").value =
+      Array.isArray(english.excludes)
+        ? english.excludes.join("\n")
+        : "";
+
+    document.getElementById("packageItineraryEn").value =
+      itineraryToText(english.itinerary);
 
     document.getElementById("packageStatus").value =
-      selectedPackage.status;
+      selectedPackage.status || "draft";
 
     document.getElementById("packageFormMessage").textContent = "";
 
@@ -392,14 +459,6 @@ document.getElementById("cancelPackageBtn")
 
     currentEditingPackageId = null;
   });
-
-// ======================================
-// START ADMIN SESSION CHECK
-// ======================================
-
-// ======================================
-// SAVE PACKAGE CHANGES
-// ======================================
 
 
 // ======================================
@@ -462,8 +521,20 @@ document.getElementById("packageForm").addEventListener("submit", async (event) 
   const updatedEnglish = {
     ...(selectedPackage?.en || {}),
     name: nameEn,
+    tag: document.getElementById("packageTagEn").value.trim(),
     makkahHotel: document.getElementById("makkahHotelEn").value.trim(),
-    madinahHotel: document.getElementById("madinahHotelEn").value.trim()
+    madinahHotel: document.getElementById("madinahHotelEn").value.trim(),
+    flight: document.getElementById("packageFlightEn").value.trim(),
+    room: document.getElementById("packageRoomEn").value.trim(),
+    includes: toLines(
+      document.getElementById("packageIncludesEn").value
+    ),
+    excludes: toLines(
+      document.getElementById("packageExcludesEn").value
+    ),
+    itinerary: itineraryToArray(
+      document.getElementById("packageItineraryEn").value
+    )
   };
 
   const updatedUrdu = {
@@ -584,5 +655,9 @@ document.getElementById("packageForm").addEventListener("submit", async (event) 
 
 });
 
-checkExistingSession();
+
+// ======================================
+// START ADMIN SESSION CHECK
+// ======================================
+
 checkExistingSession();
