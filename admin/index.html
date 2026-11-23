@@ -121,10 +121,18 @@
   <p id="packageMessage"></p>
 </section>
 
+
 <div id="packageFormBox" class="panel" hidden>
-  <h2 id="packageFormTitle">Edit Package</h2>
+  <h2 id="packageFormTitle">Add New Package</h2>
 
   <form id="packageForm">
+
+    <label>Package Type</label>
+    <select id="packageType" required>
+      <option value="umrah">Umrah</option>
+      <option value="hajj">Hajj</option>
+    </select>
+
     <label>Package Name (English)</label>
     <input type="text" id="packageNameEn" required>
 
@@ -132,10 +140,25 @@
     <input type="text" id="packageNameUr" required>
 
     <label>Price (PKR)</label>
-    <input type="number" id="packagePrice" min="0" required>
+    <input type="number" id="packagePrice" min="1" required>
 
-    <label>Number of Nights</label>
-    <input type="number" id="packageNights" min="1" required>
+    <label>Hotel Stars</label>
+    <select id="packageStars" required>
+      <option value="3">3 Stars</option>
+      <option value="4">4 Stars</option>
+      <option value="5" selected>5 Stars</option>
+    </select>
+
+    <label>Makkah Nights</label>
+    <input type="number" id="packageMakkahNights"
+      min="0" value="7" required>
+
+    <label>Madinah Nights</label>
+    <input type="number" id="packageMadinahNights"
+      min="0" value="7" required>
+
+    <label>Total Nights</label>
+    <input type="number" id="packageNights" readonly>
 
     <label>Makkah Hotel</label>
     <input type="text" id="makkahHotelEn">
@@ -144,14 +167,15 @@
     <input type="text" id="madinahHotelEn">
 
     <label>Status</label>
-    <select id="packageStatus">
+    <select id="packageStatus" required>
       <option value="draft">Draft</option>
       <option value="published">Published</option>
       <option value="unpublished">Unpublished</option>
     </select>
 
-    <button type="submit">Save Changes</button>
+    <button type="submit">Save Package</button>
     <button type="button" id="cancelPackageBtn">Cancel</button>
+
   </form>
 
   <p id="packageFormMessage"></p>

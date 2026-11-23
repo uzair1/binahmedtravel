@@ -256,6 +256,65 @@ document.getElementById("packageFilter")
 // EDIT PACKAGE BUTTON
 // ======================================
 
+
+// ======================================
+// ADD NEW PACKAGE BUTTON
+// ======================================
+
+document.getElementById("addPackageBtn")
+  .addEventListener("click", () => {
+
+    currentEditingPackageId = null;
+
+    document.getElementById("packageForm").reset();
+
+    document.getElementById("packageFormTitle").textContent =
+      "Add New Package";
+
+    document.getElementById("packageType").value = "umrah";
+    document.getElementById("packageStars").value = "5";
+    document.getElementById("packageMakkahNights").value = 7;
+    document.getElementById("packageMadinahNights").value = 7;
+
+    updateTotalNights();
+
+    document.getElementById("packageFormMessage").textContent = "";
+
+    document.getElementById("packageFormBox").hidden = false;
+
+    document.getElementById("packageFormBox").scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+
+
+// ======================================
+// AUTOMATIC TOTAL NIGHTS
+// ======================================
+
+function updateTotalNights() {
+
+  const makkahNights =
+    Number(document.getElementById("packageMakkahNights").value) || 0;
+
+  const madinahNights =
+    Number(document.getElementById("packageMadinahNights").value) || 0;
+
+  document.getElementById("packageNights").value =
+    makkahNights + madinahNights;
+}
+
+document.getElementById("packageMakkahNights")
+  .addEventListener("input", updateTotalNights);
+
+document.getElementById("packageMadinahNights")
+  .addEventListener("input", updateTotalNights);
+
+
+// ======================================
+// EDIT PACKAGE BUTTON
+// ======================================
+
 document.getElementById("packagesTableBody")
   .addEventListener("click", (event) => {
 
@@ -274,7 +333,10 @@ document.getElementById("packagesTableBody")
     currentEditingPackageId = selectedPackage.id;
 
     document.getElementById("packageFormTitle").textContent =
-      "Edit Package: " + selectedPackage.en.name;
+      "Edit Package: " + (selectedPackage.en?.name || selectedPackage.id);
+
+    document.getElementById("packageType").value =
+      selectedPackage.type || "umrah";
 
     document.getElementById("packageNameEn").value =
       selectedPackage.en?.name || "";
@@ -285,8 +347,16 @@ document.getElementById("packagesTableBody")
     document.getElementById("packagePrice").value =
       selectedPackage.price ?? "";
 
-    document.getElementById("packageNights").value =
-      selectedPackage.nights ?? "";
+    document.getElementById("packageStars").value =
+      selectedPackage.stars ?? 5;
+
+    document.getElementById("packageMakkahNights").value =
+      selectedPackage.makkah ?? 0;
+
+    document.getElementById("packageMadinahNights").value =
+      selectedPackage.madinah ?? 0;
+
+    updateTotalNights();
 
     document.getElementById("makkahHotelEn").value =
       selectedPackage.en?.makkahHotel || "";
@@ -308,7 +378,7 @@ document.getElementById("packagesTableBody")
 
 
 // ======================================
-// CANCEL EDIT
+// CANCEL ADD / EDIT
 // ======================================
 
 document.getElementById("cancelPackageBtn")
@@ -323,7 +393,6 @@ document.getElementById("cancelPackageBtn")
     currentEditingPackageId = null;
   });
 
-
 // ======================================
 // START ADMIN SESSION CHECK
 // ======================================
@@ -332,107 +401,188 @@ document.getElementById("cancelPackageBtn")
 // SAVE PACKAGE CHANGES
 // ======================================
 
+
+// ======================================
+// SAVE NEW PACKAGE / UPDATE EXISTING
+// ======================================
+
 document.getElementById("packageForm").addEventListener("submit", async (event) => {
+
   event.preventDefault();
 
   const saveButton = event.target.querySelector('button[type="submit"]');
   const formMessage = document.getElementById("packageFormMessage");
 
-  if (!currentEditingPackageId) {
-    formMessage.textContent = "No package selected.";
-    return;
-  }
+  const isEditing = Boolean(currentEditingPackageId);
 
-  const selectedPackage = allPackages.find(
-    pkg => pkg.id === currentEditingPackageId
-  );
+  const selectedPackage = isEditing
+    ? allPackages.find(pkg => pkg.id === currentEditingPackageId)
+    : null;
 
-  if (!selectedPackage) {
+  if (isEditing && !selectedPackage) {
     formMessage.textContent = "Package not found.";
     return;
   }
 
-  const updatedEnglish = {
-    ...selectedPackage.en,
-    name: document.getElementById("packageNameEn").value.trim(),
-    makkahHotel: document.getElementById("makkahHotelEn").value.trim(),
-    madinahHotel: document.getElementById("madinahHotelEn").value.trim()
-  };
+  const nameEn = document.getElementById("packageNameEn").value.trim();
+  const nameUr = document.getElementById("packageNameUr").value.trim();
 
-  const updatedUrdu = {
-    ...selectedPackage.ur,
-    name: document.getElementById("packageNameUr").value.trim()
-  };
+  const price = Number(document.getElementById("packagePrice").value);
+  const stars = Number(document.getElementById("packageStars").value);
 
-  const updatedData = {
-    en: updatedEnglish,
-    ur: updatedUrdu,
-    price: Number(document.getElementById("packagePrice").value),
-    nights: Number(document.getElementById("packageNights").value),
-    status: document.getElementById("packageStatus").value,
-    updated_at: new Date().toISOString()
-  };
+  const makkahNights = Number(
+    document.getElementById("packageMakkahNights").value
+  );
+
+  const madinahNights = Number(
+    document.getElementById("packageMadinahNights").value
+  );
+
+  const totalNights = makkahNights + madinahNights;
+
+  const type = document.getElementById("packageType").value;
+  const status = document.getElementById("packageStatus").value;
 
   if (
-    !updatedEnglish.name ||
-    !updatedUrdu.name ||
-    !Number.isFinite(updatedData.price) ||
-    updatedData.price <= 0 ||
-    !Number.isInteger(updatedData.nights) ||
-    updatedData.nights < 1
+    !nameEn ||
+    !nameUr ||
+    !Number.isFinite(price) ||
+    price <= 0 ||
+    ![3, 4, 5].includes(stars) ||
+    !Number.isInteger(makkahNights) ||
+    !Number.isInteger(madinahNights) ||
+    makkahNights < 0 ||
+    madinahNights < 0 ||
+    totalNights < 1
   ) {
     formMessage.textContent = "Please enter valid package information.";
     return;
   }
 
+  const updatedEnglish = {
+    ...(selectedPackage?.en || {}),
+    name: nameEn,
+    makkahHotel: document.getElementById("makkahHotelEn").value.trim(),
+    madinahHotel: document.getElementById("madinahHotelEn").value.trim()
+  };
+
+  const updatedUrdu = {
+    ...(selectedPackage?.ur || {}),
+    name: nameUr
+  };
+
+  const updatedData = {
+    type,
+    stars,
+    nights: totalNights,
+    makkah: makkahNights,
+    madinah: madinahNights,
+    price,
+    en: updatedEnglish,
+    ur: updatedUrdu,
+    status,
+    updated_at: new Date().toISOString()
+  };
+
+  // Generate a unique package ID for new packages
+  const packageId = isEditing
+    ? currentEditingPackageId
+    : nameEn.toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "") + "-" + Date.now();
+
   saveButton.disabled = true;
   saveButton.textContent = "Saving...";
   formMessage.textContent = "Saving package...";
 
-console.log("PACKAGE ID:", currentEditingPackageId);
-console.log("DATA BEING SENT:", updatedData);
+  try {
 
-const { data, error } = await supabaseClient
-  .from("packages")
-  .update(updatedData)
-  .eq("id", currentEditingPackageId)
-  .select("id");
+    let savedPackage;
+    let error;
 
-console.log("UPDATE RESPONSE:", data);
-console.log("UPDATE ERROR:", error);
+    if (isEditing) {
 
-if (!error && (!data || data.length === 0)) {
-  saveButton.disabled = false;
-  saveButton.textContent = "Save Changes";
+      const result = await supabaseClient
+        .from("packages")
+        .update(updatedData)
+        .eq("id", packageId)
+        .select()
+        .single();
 
-  formMessage.textContent =
-    "No package was updated. Check administrator permissions and package ID.";
+      savedPackage = result.data;
+      error = result.error;
 
-  return;
-}
+    } else {
 
-  saveButton.disabled = false;
-  saveButton.textContent = "Save Changes";
+      const result = await supabaseClient
+        .from("packages")
+        .insert({
+          id: packageId,
+          ...updatedData
+        })
+        .select()
+        .single();
 
-  if (error) {
-    formMessage.textContent = "Save failed: " + error.message;
-    return;
+      savedPackage = result.data;
+      error = result.error;
+    }
+
+    if (error) {
+      formMessage.textContent = "Save failed: " + error.message;
+      return;
+    }
+
+    if (!savedPackage) {
+      formMessage.textContent = "No package data returned from Supabase.";
+      return;
+    }
+
+    if (isEditing) {
+
+      allPackages = allPackages.map(pkg =>
+        pkg.id === packageId ? savedPackage : pkg
+      );
+
+    } else {
+
+      allPackages.push(savedPackage);
+    }
+
+    renderPackages(allPackages);
+
+    document.getElementById("totalPackages").textContent =
+      allPackages.length;
+
+    document.getElementById("umrahPackages").textContent =
+      allPackages.filter(pkg => pkg.type === "umrah").length;
+
+    document.getElementById("hajjPackages").textContent =
+      allPackages.filter(pkg => pkg.type === "hajj").length;
+
+    document.getElementById("packageFormBox").hidden = true;
+    document.getElementById("packageForm").reset();
+
+    currentEditingPackageId = null;
+
+    formMessage.textContent = "";
+
+    alert(
+      isEditing
+        ? "Package updated successfully!"
+        : "New package added successfully!"
+    );
+
+  } catch (err) {
+
+    formMessage.textContent = "Unexpected error: " + err.message;
+
+  } finally {
+
+    saveButton.disabled = false;
+    saveButton.textContent = "Save Package";
   }
 
-  allPackages = allPackages.map(pkg =>
-    pkg.id === currentEditingPackageId
-      ? { ...pkg, ...updatedData }
-      : pkg
-  );
-
-  filterPackages();
-
-  document.getElementById("packageFormBox").hidden = true;
-  document.getElementById("packageForm").reset();
-
-  currentEditingPackageId = null;
-
-  formMessage.textContent = "Package updated successfully!";
 });
 
+checkExistingSession();
 checkExistingSession();

@@ -8,7 +8,7 @@ async function loadPackagesFromSupabase() {
   try {
     const { data, error } = await window.supabaseClient
       .from('packages')
-      .select('id, type, en, ur, price, nights, makkah, madinah')
+      .select('id, type, stars, en, ur, price, nights, makkah, madinah')
       .eq('status', 'published');
 
     if (error) throw error;
@@ -86,6 +86,7 @@ document.addEventListener('click', e => {
 /* ---------- Packages ---------- */
 function pkgCard(p) {
   const d = L(p), t = T();
+  const includes = Array.isArray(d.includes) ? d.includes : [];
   return `
   <article class="pkg-card reveal">
     <div class="pkg-head ${p.type}">
@@ -114,7 +115,7 @@ function pkgCard(p) {
         </div>
       </div>
       <ul class="mt-4 space-y-2 text-sm text-slate-600">
-        ${d.includes.slice(0, 4).map(i => `<li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>${i}</li>`).join('')}
+        ${includes.slice(0, 4).map(i => `<li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>${i}</li>`).join('')}
       </ul>
       <div class="mt-auto pt-5 flex items-end justify-between gap-3 border-t border-slate-100">
         <div>
@@ -179,6 +180,9 @@ const pkgModal = $('#pkgModal');
 function openPkg(id) {
   const p = PACKAGES.find(x => x.id === id); if (!p) return;
   const d = L(p), t = T();
+  const includes = Array.isArray(d.includes) ? d.includes : [];
+  const excludes = Array.isArray(d.excludes) ? d.excludes : [];
+  const itinerary = Array.isArray(d.itinerary) ? d.itinerary : [];
   const activeTab = $('#tabs .tab-btn.active')?.dataset.tab && state.openPkg === id ? $('#tabs .tab-btn.active').dataset.tab : 'overview';
   state.openPkg = id;
   const waText = state.lang === 'ur'
@@ -219,7 +223,7 @@ function openPkg(id) {
         </div>
       </div>
       <ol data-panel="itinerary" class="${hidden('itinerary')} relative border-s-2 border-navy-100 ms-2 space-y-5">
-        ${d.itinerary.map(([day, txt]) => `
+        ${itinerary.map(([day, txt]) => `
           <li class="ps-5 relative">
             <span class="absolute -start-[7px] top-1 w-3 h-3 rounded-full bg-brand-600"></span>
             <div class="text-xs font-bold text-brand-600">${day}</div>
@@ -229,11 +233,11 @@ function openPkg(id) {
       <div data-panel="inclusions" class="${hidden('inclusions')} grid sm:grid-cols-2 gap-6">
         <div>
           <h4 class="font-bold text-navy-800 text-sm mb-3">${t.included}</h4>
-          <ul class="space-y-2 text-sm text-slate-600">${d.includes.map(i => `<li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>${i}</li>`).join('')}</ul>
+          <ul class="space-y-2 text-sm text-slate-600">${includes.map(i => `<li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>${i}</li>`).join('')}</ul>
         </div>
         <div>
           <h4 class="font-bold text-navy-800 text-sm mb-3">${t.notIncluded}</h4>
-          <ul class="space-y-2 text-sm text-slate-600">${d.excludes.map(i => `<li class="flex gap-2"><i data-lucide="x-circle" class="w-4 h-4 text-slate-400 shrink-0 mt-0.5"></i>${i}</li>`).join('')}</ul>
+          <ul class="space-y-2 text-sm text-slate-600">${excludes.map(i => `<li class="flex gap-2"><i data-lucide="x-circle" class="w-4 h-4 text-slate-400 shrink-0 mt-0.5"></i>${i}</li>`).join('')}</ul>
         </div>
       </div>
     </div>
