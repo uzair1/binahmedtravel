@@ -86,6 +86,7 @@ document.addEventListener('click', e => {
 /* ---------- Packages ---------- */
 function pkgCard(p) {
   const d = L(p), t = T();
+  console.log("Selected language:", state.lang, "Package details:", d);
   const includes = Array.isArray(d.includes) ? d.includes : [];
   return `
   <article class="pkg-card reveal">

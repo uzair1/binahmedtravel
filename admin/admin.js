@@ -429,6 +429,28 @@ document.getElementById("packagesTableBody")
         : "";
 
     document.getElementById("packageItineraryEn").value =
+
+    document.getElementById("packageTagUr").value =
+  selectedPackage.ur?.tag || "";
+
+document.getElementById("packageFlightUr").value =
+  selectedPackage.ur?.flight || "";
+
+document.getElementById("packageRoomUr").value =
+  selectedPackage.ur?.room || "";
+
+document.getElementById("packageIncludesUr").value =
+  Array.isArray(selectedPackage.ur?.includes)
+    ? selectedPackage.ur.includes.join("\n")
+    : "";
+
+document.getElementById("packageExcludesUr").value =
+  Array.isArray(selectedPackage.ur?.excludes)
+    ? selectedPackage.ur.excludes.join("\n")
+    : "";
+
+document.getElementById("packageItineraryUr").value =
+  itineraryToText(selectedPackage.ur?.itinerary);
       itineraryToText(english.itinerary);
 
     document.getElementById("packageStatus").value =
@@ -537,10 +559,22 @@ document.getElementById("packageForm").addEventListener("submit", async (event) 
     )
   };
 
-  const updatedUrdu = {
-    ...(selectedPackage?.ur || {}),
-    name: nameUr
-  };
+const updatedUrdu = {
+  ...(selectedPackage?.ur || {}),
+  name: nameUr,
+  tag: document.getElementById("packageTagUr").value.trim(),
+  flight: document.getElementById("packageFlightUr").value.trim(),
+  room: document.getElementById("packageRoomUr").value.trim(),
+  includes: toLines(
+    document.getElementById("packageIncludesUr").value
+  ),
+  excludes: toLines(
+    document.getElementById("packageExcludesUr").value
+  ),
+  itinerary: itineraryToArray(
+    document.getElementById("packageItineraryUr").value
+  )
+};
 
   const updatedData = {
     type,
