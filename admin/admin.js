@@ -1,5 +1,9 @@
 
-const ADMIN_USER_ID = "c214798a-fe1c-4b41-884c-87a9a025929f";
+const ADMIN_USER_IDS = [
+  "c214798a-fe1c-4b41-884c-87a9a025929f",
+  "9ac5d5d5-2159-4080-8537-0c71c971d9c2",
+  "b10f5c9f-4d25-4990-b0b2-047bf976dceb"
+];
 
 const loginBox = document.getElementById("loginBox");
 const dashboard = document.getElementById("dashboard");
@@ -18,7 +22,8 @@ let currentEditingPackageId = null;
 // ======================================
 
 async function loadDashboard(user) {
-  if (!user || user.id !== ADMIN_USER_ID) {
+  
+  if (!user || !ADMIN_USER_IDS.includes(user.id)) {
     await supabaseClient.auth.signOut();
 
     loginBox.hidden = false;
