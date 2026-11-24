@@ -374,6 +374,7 @@ document.getElementById("packagesTableBody")
     if (!selectedPackage) return;
 
     const english = selectedPackage.en || {};
+    const urdu = selectedPackage.ur || {};
 
     currentEditingPackageId = selectedPackage.id;
 
@@ -387,7 +388,7 @@ document.getElementById("packagesTableBody")
       english.name || "";
 
     document.getElementById("packageNameUr").value =
-      selectedPackage.ur?.name || "";
+      urdu.name || "";
 
     document.getElementById("packagePrice").value =
       selectedPackage.price ?? "";
@@ -403,6 +404,7 @@ document.getElementById("packagesTableBody")
 
     updateTotalNights();
 
+    // English hotel names
     document.getElementById("makkahHotelEn").value =
       english.makkahHotel || "";
 
@@ -429,29 +431,36 @@ document.getElementById("packagesTableBody")
         : "";
 
     document.getElementById("packageItineraryEn").value =
+      itineraryToText(english.itinerary);
+
+    // Urdu hotel names
+    document.getElementById("makkahHotelUr").value =
+      urdu.makkahHotel || "";
+
+    document.getElementById("madinahHotelUr").value =
+      urdu.madinahHotel || "";
 
     document.getElementById("packageTagUr").value =
-  selectedPackage.ur?.tag || "";
+      urdu.tag || "";
 
-document.getElementById("packageFlightUr").value =
-  selectedPackage.ur?.flight || "";
+    document.getElementById("packageFlightUr").value =
+      urdu.flight || "";
 
-document.getElementById("packageRoomUr").value =
-  selectedPackage.ur?.room || "";
+    document.getElementById("packageRoomUr").value =
+      urdu.room || "";
 
-document.getElementById("packageIncludesUr").value =
-  Array.isArray(selectedPackage.ur?.includes)
-    ? selectedPackage.ur.includes.join("\n")
-    : "";
+    document.getElementById("packageIncludesUr").value =
+      Array.isArray(urdu.includes)
+        ? urdu.includes.join("\n")
+        : "";
 
-document.getElementById("packageExcludesUr").value =
-  Array.isArray(selectedPackage.ur?.excludes)
-    ? selectedPackage.ur.excludes.join("\n")
-    : "";
+    document.getElementById("packageExcludesUr").value =
+      Array.isArray(urdu.excludes)
+        ? urdu.excludes.join("\n")
+        : "";
 
-document.getElementById("packageItineraryUr").value =
-  itineraryToText(selectedPackage.ur?.itinerary);
-      itineraryToText(english.itinerary);
+    document.getElementById("packageItineraryUr").value =
+      itineraryToText(urdu.itinerary);
 
     document.getElementById("packageStatus").value =
       selectedPackage.status || "draft";
@@ -559,22 +568,24 @@ document.getElementById("packageForm").addEventListener("submit", async (event) 
     )
   };
 
-const updatedUrdu = {
-  ...(selectedPackage?.ur || {}),
-  name: nameUr,
-  tag: document.getElementById("packageTagUr").value.trim(),
-  flight: document.getElementById("packageFlightUr").value.trim(),
-  room: document.getElementById("packageRoomUr").value.trim(),
-  includes: toLines(
-    document.getElementById("packageIncludesUr").value
-  ),
-  excludes: toLines(
-    document.getElementById("packageExcludesUr").value
-  ),
-  itinerary: itineraryToArray(
-    document.getElementById("packageItineraryUr").value
-  )
-};
+  const updatedUrdu = {
+    ...(selectedPackage?.ur || {}),
+    name: nameUr,
+    makkahHotel: document.getElementById("makkahHotelUr").value.trim(),
+    madinahHotel: document.getElementById("madinahHotelUr").value.trim(),
+    tag: document.getElementById("packageTagUr").value.trim(),
+    flight: document.getElementById("packageFlightUr").value.trim(),
+    room: document.getElementById("packageRoomUr").value.trim(),
+    includes: toLines(
+      document.getElementById("packageIncludesUr").value
+    ),
+    excludes: toLines(
+      document.getElementById("packageExcludesUr").value
+    ),
+    itinerary: itineraryToArray(
+      document.getElementById("packageItineraryUr").value
+    )
+  };
 
   const updatedData = {
     type,

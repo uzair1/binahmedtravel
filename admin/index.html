@@ -122,126 +122,186 @@
 </section>
 
 
-<div id="packageFormBox" class="panel" hidden>
+
+<div id="packageFormBox" class="panel package-form-panel" hidden>
   <h2 id="packageFormTitle">Add New Package</h2>
 
   <form id="packageForm">
 
-    <label>Package Type</label>
-    <select id="packageType" required>
-      <option value="umrah">Umrah</option>
-      <option value="hajj">Hajj</option>
-    </select>
+    <div class="form-section">
+      <h3>Basic Package Information</h3>
 
-    <label>Package Name (English)</label>
-    <input type="text" id="packageNameEn" required>
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="packageType">Package Type</label>
+          <select id="packageType" required>
+            <option value="umrah">Umrah</option>
+            <option value="hajj">Hajj</option>
+          </select>
+        </div>
 
-    <label>Package Name (Urdu)</label>
-    <input type="text" id="packageNameUr" required>
+        <div class="form-field">
+          <label for="packageStatus">Status</label>
+          <select id="packageStatus" required>
+            <option value="draft">Draft</option>
+            <option value="published">Published</option>
+            <option value="unpublished">Unpublished</option>
+          </select>
+        </div>
 
-    <label>Price (PKR)</label>
-    <input type="number" id="packagePrice" min="1" required>
+        <div class="form-field">
+          <label for="packageNameEn">Package Name (English)</label>
+          <input type="text" id="packageNameEn" required>
+        </div>
 
-    <label>Hotel Stars</label>
-    <select id="packageStars" required>
-      <option value="3">3 Stars</option>
-      <option value="4">4 Stars</option>
-      <option value="5" selected>5 Stars</option>
-    </select>
+        <div class="form-field">
+          <label for="packageNameUr">Package Name (Urdu)</label>
+          <input type="text" id="packageNameUr" required>
+        </div>
 
-    <label>Makkah Nights</label>
-    <input type="number" id="packageMakkahNights"
-      min="0" value="7" required>
+        <div class="form-field">
+          <label for="packagePrice">Price (PKR)</label>
+          <input type="number" id="packagePrice" min="1" required>
+        </div>
 
-    <label>Madinah Nights</label>
-    <input type="number" id="packageMadinahNights"
-      min="0" value="7" required>
+        <div class="form-field">
+          <label for="packageStars">Hotel Stars</label>
+          <select id="packageStars" required>
+            <option value="3">3 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="5" selected>5 Stars</option>
+          </select>
+        </div>
+      </div>
+    </div>
 
-    <label>Total Nights</label>
-    <input type="number" id="packageNights" readonly>
+    <div class="form-section">
+      <h3>Accommodation Details</h3>
 
-    <label>Makkah Hotel</label>
-    <input type="text" id="makkahHotelEn">
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="packageMakkahNights">Makkah Nights</label>
+          <input type="number" id="packageMakkahNights" min="0" value="7" required>
+        </div>
 
-    <label>Madinah Hotel</label>
-    <input type="text" id="madinahHotelEn">
+        <div class="form-field">
+          <label for="packageMadinahNights">Madinah Nights</label>
+          <input type="number" id="packageMadinahNights" min="0" value="7" required>
+        </div>
 
+        <div class="form-field">
+          <label for="packageNights">Total Nights</label>
+          <input type="number" id="packageNights" readonly>
+        </div>
 
+        <div class="form-field">
+          <label for="makkahHotelEn">Makkah Hotel</label>
+          <input type="text" id="makkahHotelEn">
+        </div>
 
-    <label>Package Tag (English)</label>
+        <div class="form-field">
+          <label for="madinahHotelEn">Madinah Hotel</label>
+          <input type="text" id="madinahHotelEn">
+        </div>
+      </div>
+    </div>
 
-    <input type="text" id="packageTagEn" placeholder="e.g. Best Value, Luxury">
+    <div class="form-section">
+      <h3>English Package Details</h3>
 
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="packageTagEn">Package Tag (English)</label>
+          <input type="text" id="packageTagEn" placeholder="e.g. Best Value, Luxury">
+        </div>
 
-    <label>Flight Details (English)</label>
+        <div class="form-field">
+          <label for="packageFlightEn">Flight Details (English)</label>
+          <textarea id="packageFlightEn" rows="2"
+            placeholder="e.g. Economy return from Karachi (Saudia / PIA)"></textarea>
+        </div>
 
-    <textarea id="packageFlightEn" rows="2"
+        <div class="form-field">
+          <label for="packageRoomEn">Room Type (English)</label>
+          <input type="text" id="packageRoomEn" placeholder="e.g. Quad sharing">
+        </div>
 
-    placeholder="e.g. Economy return from Karachi (Saudia / PIA)"></textarea>
+        <div class="form-field full-width">
+          <label for="packageIncludesEn">Inclusions (English)</label>
+          <textarea id="packageIncludesEn" rows="5"
+            placeholder="Enter one inclusion per line"></textarea>
+        </div>
 
+        <div class="form-field full-width">
+          <label for="packageExcludesEn">Exclusions (English)</label>
+          <textarea id="packageExcludesEn" rows="4"
+            placeholder="Enter one exclusion per line"></textarea>
+        </div>
 
-    <label>Room Type (English)</label>
+        <div class="form-field full-width">
+          <label for="packageItineraryEn">Itinerary (English)</label>
+          <textarea id="packageItineraryEn" rows="7"
+            placeholder="Day 1 | Depart Karachi and arrive Jeddah&#10;Day 2–8 | Stay in Makkah"></textarea>
+        </div>
+      </div>
+    </div>
 
-    <input type="text" id="packageRoomEn" placeholder="e.g. Quad sharing">
+    <div class="form-section" dir="rtl">
+      <h3>اردو پیکج کی تفصیلات</h3>
 
+      <div class="form-field">
+  <label for="makkahHotelUr">مکہ مکرمہ کا ہوٹل</label>
+  <input type="text" id="makkahHotelUr"
+    placeholder="مکہ مکرمہ کے ہوٹل کا نام">
+</div>
 
-    <label>Inclusions (English)</label>
+<div class="form-field">
+  <label for="madinahHotelUr">مدینہ منورہ کا ہوٹل</label>
+  <input type="text" id="madinahHotelUr"
+    placeholder="مدینہ منورہ کے ہوٹل کا نام">
+</div>
 
-    <textarea id="packageIncludesEn" rows="5"
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="packageTagUr">پیکج ٹیگ (اردو)</label>
+          <input type="text" id="packageTagUr" placeholder="مثلاً بہترین قیمت">
+        </div>
 
-    placeholder="Enter one inclusion per line"></textarea>
+        <div class="form-field">
+          <label for="packageFlightUr">پرواز کی تفصیلات (اردو)</label>
+          <textarea id="packageFlightUr" rows="2"
+            placeholder="پرواز کی تفصیلات"></textarea>
+        </div>
 
+        <div class="form-field">
+          <label for="packageRoomUr">کمرے کی قسم (اردو)</label>
+          <input type="text" id="packageRoomUr" placeholder="مثلاً چار افراد کا کمرہ">
+        </div>
 
-    <label>Exclusions (English)</label>
+        <div class="form-field full-width">
+          <label for="packageIncludesUr">شامل سہولیات (اردو)</label>
+          <textarea id="packageIncludesUr" rows="5"
+            placeholder="ہر سہولت الگ لائن میں لکھیں"></textarea>
+        </div>
 
-    <textarea id="packageExcludesEn" rows="4"
+        <div class="form-field full-width">
+          <label for="packageExcludesUr">غیر شامل سہولیات (اردو)</label>
+          <textarea id="packageExcludesUr" rows="4"
+            placeholder="ہر غیر شامل چیز الگ لائن میں لکھیں"></textarea>
+        </div>
 
-    placeholder="Enter one exclusion per line"></textarea>
+        <div class="form-field full-width">
+          <label for="packageItineraryUr">سفر کا پروگرام (اردو)</label>
+          <textarea id="packageItineraryUr" rows="7"
+            placeholder="دن 1 | کراچی سے جدہ روانگی&#10;دن 2 تا 5 | مکہ مکرمہ میں قیام"></textarea>
+        </div>
+      </div>
+    </div>
 
-
-    <label>Itinerary (English)</label>
-
-    <textarea id="packageItineraryEn" rows="7"
-
-    placeholder="Enter one day per line, using this format:
-
-    Day 1 | Depart Karachi and arrive Jeddah
-
-    Day 2–8 | Stay in Makkah"></textarea>
-
-    <label>Package Tag (Urdu)</label>
-<input type="text" id="packageTagUr" placeholder="مثلاً بہترین قیمت">
-
-<label>Flight Details (Urdu)</label>
-<textarea id="packageFlightUr" rows="2"
-  placeholder="پرواز کی تفصیلات"></textarea>
-
-<label>Room Type (Urdu)</label>
-<input type="text" id="packageRoomUr" placeholder="مثلاً چار افراد کا کمرہ">
-
-<label>Inclusions (Urdu)</label>
-<textarea id="packageIncludesUr" rows="5"
-  placeholder="ہر سہولت الگ لائن میں لکھیں"></textarea>
-
-<label>Exclusions (Urdu)</label>
-<textarea id="packageExcludesUr" rows="4"
-  placeholder="ہر غیر شامل چیز الگ لائن میں لکھیں"></textarea>
-
-<label>Itinerary (Urdu)</label>
-<textarea id="packageItineraryUr" rows="7"
-  placeholder="دن 1 | کراچی سے جدہ روانگی
-دن 2 تا 5 | مکہ مکرمہ میں قیام"></textarea>
-
-
-    <label>Status</label>
-    <select id="packageStatus" required>
-      <option value="draft">Draft</option>
-      <option value="published">Published</option>
-      <option value="unpublished">Unpublished</option>
-    </select>
-
-    <button type="submit">Save Package</button>
-    <button type="button" id="cancelPackageBtn">Cancel</button>
+    <div class="form-actions">
+      <button type="submit">Save Package</button>
+      <button type="button" id="cancelPackageBtn">Cancel</button>
+    </div>
 
   </form>
 
